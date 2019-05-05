@@ -14,7 +14,7 @@ if __name__ == '__main__':
     username = 'NancyHui'
     orgname = 'TestUpCommunity'
 
-    token = '06e0e489b4d061069c2189cd11dbcd9502f9e348'
+    token = '****'
     github = Github(token=token)
 
     # All data is sent and received as JSON
