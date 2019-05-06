@@ -1,9 +1,13 @@
 from core.rest_client import RestClient
+from api.repositories.branches import Branches
+from api.repositories.traffic import Traffic
 
 
 class Repos(RestClient):
     def __init__(self, api_host, **kwargs):
         super(Repos, self).__init__(api_host, **kwargs)
+        self.branches = Branches(self.api_host, **kwargs)
+        self.traffic = Traffic(self.api_host, **kwargs)
 
     # 1
     def list_your_repos(self, **kwargs):
