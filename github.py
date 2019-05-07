@@ -13,7 +13,7 @@ if __name__ == '__main__':
     username = 'NancyHui'
     orgname = 'TestUpCommunity'
 
-    token = '5a82ed2aee953483ee627ee651af3b8df60ab62e'
+    token = '0d017520936aef424c6f7949aa32f2e29c6e7581'
     github = Github(token=token)
 
     # All data is sent and received as JSON
@@ -359,6 +359,35 @@ if __name__ == '__main__':
     # print(r165.status_code)
     # print(r165.text)
 
+    # # 166
+    # params166 = {"affiliation": "all"}
+    # headers = {"Accept": "application/vnd.github.hellcat-preview+json"}
+    # r166 = github.repos.collaborators.list_collaborators(username, "hello-world", params=params166, headers=headers)
+    # print(r166.status_code)
+    # print(r166.text)
+
+    # # 167
+    # headers = {"Accept": "application/vnd.github.hellcat-preview+json"}
+    # r167 = github.repos.collaborators.check_if_a_user_is_a_collaborator(username, "hello-world", username, headers=headers)
+    # print(r167.status_code)
+    # print(r167.text)
+
+    # # 168
+    # r168 = github.repos.collaborators.review_a_users_permission_level(username, "hello-world", username)
+    # print(r168.status_code)
+    # print(r168.text)
+
+    # # 169
+    params169 = {"permission": "push"}
+    r169 = github.repos.collaborators.add_user_a_collaborator(username, "hello-world", "chn0622")
+    print(r169.status_code)
+    print(r169.text)
+
+    # # 170
+    # r170 = github.repos.collaborators.remove_user_a_collaborator(username, "hello-world", "chn0622")
+    # print(r170.status_code)
+    # print(r170.text)
+
     # # 244
     # r244 = github.repos.traffic.list_referrers(username, 'hello-world')
     # print(r244.status_code)
@@ -376,7 +405,7 @@ if __name__ == '__main__':
     # print(r246.text)
 
     # 247
-    params247 = {"per": "week"}
-    r247 = github.repos.traffic.clones(username, 'ZSXQ', params=params247)
-    print(r247.status_code)
-    print(r247.text)
+    # params247 = {"per": "day"}
+    # r247 = github.repos.traffic.clones(username, 'test_branches', params=params247)
+    # print(r247.status_code)
+    # print(r247.text)
