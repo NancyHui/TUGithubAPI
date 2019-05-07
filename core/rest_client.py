@@ -55,7 +55,9 @@ class RestClient(object):
         elif method_name == 'options':
             return self.session.options(url, **kwargs)
         elif method_name == 'delete':
-            return self.session.delete(url, **kwargs)
+            if json:
+                data = json_parser.dumps(json)
+            return self.session.delete(url, data=data, **kwargs)
 
 # if __name__ == '__main__':
 #     host = 'https://www.shwzoo.com'
