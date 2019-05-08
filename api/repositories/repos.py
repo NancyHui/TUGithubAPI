@@ -1,5 +1,7 @@
 from core.rest_client import RestClient
 from api.repositories.branches import Branches
+from api.repositories.collaborators import Collaborators
+from api.repositories.comments import Comments
 from api.repositories.traffic import Traffic
 
 
@@ -7,6 +9,8 @@ class Repos(RestClient):
     def __init__(self, api_host, **kwargs):
         super(Repos, self).__init__(api_host, **kwargs)
         self.branches = Branches(self.api_host, **kwargs)
+        self.collaborators = Collaborators(self.api_host, **kwargs)
+        self.comments = Comments(self.api_host, **kwargs)
         self.traffic = Traffic(self.api_host, **kwargs)
 
     # 1
