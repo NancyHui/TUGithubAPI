@@ -21,7 +21,7 @@ class Comments(RestClient):
     def create_a_commit_comment(self, owner, repo, sha, **kwargs):
         """
         https://developer.github.com/v3/repos/comments/#create-a-commit-comment
-        :param sha:
+        :param sha: SHA or branch
         """
         return self.post("/repos/{}/{}/commits/{}/comments".format(owner, repo, sha), **kwargs)
 
@@ -47,3 +47,4 @@ class Comments(RestClient):
         return self.delete("/repos/{}/{}/comments/{}".format(owner, repo, comment_id), **kwargs)
 
     # 177
+
