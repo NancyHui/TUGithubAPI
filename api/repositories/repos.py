@@ -5,6 +5,7 @@ from api.repositories.comments import Comments
 from api.repositories.commits import Commits
 from api.repositories.community import Community
 from api.repositories.contents import Contents
+from api.repositories.keys import Keys
 from api.repositories.traffic import Traffic
 
 
@@ -17,6 +18,7 @@ class Repos(RestClient):
         self.commits = Commits(self.api_host, **kwargs)
         self.community = Community(self.api_host, **kwargs)
         self.contents = Contents(self.api_host, **kwargs)
+        self.keys = Keys(self.api_host, **kwargs)
         self.traffic = Traffic(self.api_host, **kwargs)
 
     # 1
