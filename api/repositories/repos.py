@@ -10,6 +10,7 @@ from api.repositories.deployments import Deployments
 from api.repositories.downloads import Downloads
 from api.repositories.forks import Forks
 from api.repositories.invitations import Invitation
+from api.repositories.merging import Merging
 from api.repositories.traffic import Traffic
 
 
@@ -27,6 +28,7 @@ class Repos(RestClient):
         self.downloads = Downloads(self.api_host, **kwargs)
         self.forks = Forks(self.api_host, **kwargs)
         self.invitations = Invitation(self.api_host, **kwargs)
+        self.merging = Merging(self.api_host, **kwargs)
         self.traffic = Traffic(self.api_host, **kwargs)
 
     # 1
