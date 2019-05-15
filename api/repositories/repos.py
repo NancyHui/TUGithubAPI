@@ -16,6 +16,7 @@ from api.repositories.releases import Releases
 from api.repositories.statistics import Statistics
 from api.repositories.statuses import Statuses
 from api.repositories.traffic import Traffic
+from api.repositories.hooks import Hooks
 
 
 class Repos(RestClient):
@@ -38,6 +39,7 @@ class Repos(RestClient):
         self.statistics = Statistics(self.api_host, **kwargs)
         self.statuses = Statuses(self.api_host, **kwargs)
         self.traffic = Traffic(self.api_host, **kwargs)
+        self.hooks = Hooks(self.api_host, **kwargs)
 
     # 1
     def list_your_repos(self, **kwargs):
