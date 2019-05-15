@@ -14,6 +14,7 @@ from api.repositories.merging import Merging
 from api.repositories.pages import Pages
 from api.repositories.releases import Releases
 from api.repositories.statistics import Statistics
+from api.repositories.statuses import Statuses
 from api.repositories.traffic import Traffic
 
 
@@ -35,6 +36,7 @@ class Repos(RestClient):
         self.pages = Pages(self.api_host, **kwargs)
         self.releases = Releases(self.api_host, **kwargs)
         self.statistics = Statistics(self.api_host, **kwargs)
+        self.statuses = Statuses(self.api_host, **kwargs)
         self.traffic = Traffic(self.api_host, **kwargs)
 
     # 1
